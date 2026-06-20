@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,82 +7,120 @@
     <title>Using Early Engagement Behaviors to Predict Student Success</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header>
     <h1>Using Early Engagement Behaviors to Predict Student Success</h1>
-    <p>Educational Data Analytics | Predictive Modeling</p>
+    <p>Educational Data Analytics | Predictive Modeling | Learning Analytics</p>
     <a href="index.html">← Back to Portfolio</a>
 </header>
 
 <section>
-    <h2>Project Overview</h2>
 
-    <p>
-        This project analyzed 22,437 student records from the Open University Learning Analytics
-        Dataset (OULAD) to investigate whether early engagement behaviors can predict academic success.
-    </p>
+```
+<h2>Project Overview</h2>
 
-    <p>
-        Using logistic regression, I examined how early clicks and early active learning days
-        influence the probability of passing a course. The project demonstrates the use of
-        educational data mining and predictive analytics to identify student success indicators.
-    </p>
+<p>
+    This project analyzed <strong>22,437 student records</strong> from the
+    <strong>Open University Learning Analytics Dataset (OULAD)</strong> to investigate
+    whether early engagement behaviors can predict academic success in online learning environments.
+</p>
 
-    <h2>Research Question</h2>
+<p>
+    Using logistic regression and learning analytics techniques, I examined how
+    <strong>Early Clicks</strong> and <strong>Early Active Days</strong>
+    influence the likelihood of students successfully completing a course.
+    The project demonstrates the application of educational data mining and predictive analytics
+    to identify actionable indicators of student success.
+</p>
 
-    <p>
-        Can early engagement behaviors predict whether a student will successfully pass a course?
-    </p>
+<p>
+    One of the key findings was that <strong>Early Clicks emerged as the strongest predictor of student success</strong>,
+    highlighting the importance of student interaction with learning materials during the first three weeks of a course.
+</p>
 
-    <h2>Methods</h2>
+<h2>Research Question</h2>
 
-    <ul>
-        <li>Data Cleaning and Preparation</li>
-        <li>Exploratory Data Analysis</li>
-        <li>Feature Engineering</li>
-        <li>Logistic Regression Modeling</li>
-        <li>Odds Ratio Analysis</li>
-        <li>Predictive Probability Visualization</li>
-    </ul>
+<p>
+    Can early engagement behaviors predict whether a student will successfully pass a course?
+</p>
 
-    <h2>Tools Used</h2>
+<h2>Dataset</h2>
 
-    <p>R, ggplot2, Statistical Learning, Data Visualization</p>
+<ul>
+    <li>Open University Learning Analytics Dataset (OULAD)</li>
+    <li>22,437 student records</li>
+    <li>Online learning engagement data</li>
+    <li>Pass/Fail course outcome variable</li>
+</ul>
 
-    <h2>Key Visualizations</h2>
+<h2>Methods</h2>
 
-    <h3>Early Active Days by Course Outcome</h3>
-    <img src="images/student_success_boxplot_active_days.png" width="800">
+<ul>
+    <li>Data Cleaning and Preparation</li>
+    <li>Feature Engineering</li>
+    <li>Exploratory Data Analysis (EDA)</li>
+    <li>Logistic Regression Modeling</li>
+    <li>Odds Ratio Analysis</li>
+    <li>Predictive Probability Modeling</li>
+    <li>Data Visualization</li>
+</ul>
 
-    <h3>Early Clicks by Course Outcome</h3>
-    <img src="images/student_success_boxplot_clicks.png" width="800">
+<h2>Tools Used</h2>
 
-    <h3>Predicted Probability of Passing by Early Clicks</h3>
-    <img src="images/student_success_probability_clicks_only.png" width="800">
+<p>
+    R • ggplot2 • Logistic Regression • Statistical Learning • Data Visualization
+</p>
 
-    <h3>Predicted Probability of Passing by Early Engagement</h3>
-    <img src="images/student_success_probability_clicks_and_active_days.png" width="800">
+<h2>Key Visualizations</h2>
 
-    <h3>Odds Ratios for Passing</h3>
-    <img src="images/student_success_odds_ratio.png" width="800">
+<h3>Early Active Days by Course Outcome</h3>
+<img src="images/student_success_boxplot_active_days.png" alt="Early Active Days by Course Outcome" width="900">
 
-    <h3>Distribution of Early Active Days</h3>
-    <img src="images/student_success_histogram_active_days.png" width="800">
+<h3>Early Clicks by Course Outcome</h3>
+<img src="images/student_success_boxplot_clicks.png" alt="Early Clicks by Course Outcome" width="900">
 
-    <h3>Distribution of Early Clicks</h3>
-    <img src="images/student_success_histogram_clicks.png" width="800">
+<h3>Predicted Probability of Passing by Early Clicks</h3>
+<img src="images/student_success_probability_clicks_only.png" alt="Predicted Probability of Passing by Early Clicks" width="900">
 
-    <h2>Key Findings</h2>
+<h3>Predicted Probability of Passing by Early Engagement Behaviors</h3>
+<img src="images/student_success_probability_clicks_and_active_days.png" alt="Predicted Probability of Passing by Early Engagement Behaviors" width="900">
 
-    <ul>
-        <li>Students who passed showed higher early engagement than students who failed.</li>
-        <li>Both early clicks and active learning days were significant predictors of success.</li>
-        <li>The probability of passing increased substantially as engagement increased.</li>
-        <li>Early learning behavior can provide useful indicators for student support interventions.</li>
-    </ul>
+<h3>Odds Ratios for Passing</h3>
+<img src="images/student_success_odds_ratio.png" alt="Odds Ratios for Passing" width="900">
+
+<h3>Distribution of Early Active Days</h3>
+<img src="images/student_success_histogram_active_days.png" alt="Distribution of Early Active Days" width="900">
+
+<h3>Distribution of Early Clicks</h3>
+<img src="images/student_success_histogram_clicks.png" alt="Distribution of Early Clicks" width="900">
+
+<h2>Key Findings</h2>
+
+<ul>
+    <li>Students who passed their courses demonstrated substantially higher levels of early engagement than students who failed.</li>
+
+    <li><strong>Early Clicks emerged as the strongest predictor of student success</strong>, indicating that students who interacted more frequently with course materials during the first 21 days were substantially more likely to pass.</li>
+
+    <li>Early Active Days also contributed to prediction accuracy, suggesting that both engagement intensity and engagement consistency are important indicators of academic success.</li>
+
+    <li>The probability of passing increased consistently as engagement levels increased.</li>
+
+    <li>Early engagement metrics can serve as useful indicators for identifying students who may benefit from timely academic support.</li>
+
+    <li>Learning analytics can provide data-driven insights to support student retention and success initiatives.</li>
+</ul>
+
+<h2>Skills Demonstrated</h2>
+
+<p>
+    Learning Analytics • Educational Data Mining • Predictive Modeling • Logistic Regression • Statistical Analysis • Data Visualization • Research Design • Data Interpretation
+</p>
+```
 
 </section>
 
 </body>
 </html>
+
