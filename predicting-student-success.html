@@ -1,124 +1,1149 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Using Early Engagement Behaviors to Predict Student Success</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="A learning analytics project examining how early clicks and active learning days predict student success using OULAD data and logistic regression in R.">
+
+    <title>
+        Using Early Engagement Behaviors to Predict Student Success
+    </title>
+
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .project-navigation {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 15px 20px;
+            background: #edf4fc;
+        }
+
+        .project-navigation a {
+            color: #245a91;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .project-navigation a:hover {
+            text-decoration: underline;
+        }
+
+        .project-meta {
+            color: #526477;
+            font-weight: 600;
+            line-height: 1.8;
+        }
+
+        .research-highlight {
+            background: #eef5ff;
+            border-left: 4px solid #3674b5;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .research-highlight p {
+            margin-bottom: 0;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin: 25px 0;
+        }
+
+        .summary-item {
+            background: #f1f6fd;
+            border: 1px solid #dce6f3;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .summary-item strong {
+            display: block;
+            color: #245a91;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .summary-item span {
+            color: #526477;
+            font-size: 0.95rem;
+        }
+
+        .method-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .method-item {
+            background: #f8fafc;
+            border: 1px solid #dce4ed;
+            border-radius: 10px;
+            padding: 18px;
+        }
+
+        .method-item h3 {
+            color: #245a91;
+            margin-top: 0;
+        }
+
+        .visualization-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(300px, 1fr));
+            gap: 22px;
+            margin-top: 25px;
+        }
+
+        .visualization-card {
+            background: #f8fafc;
+            border: 1px solid #dce4ed;
+            border-radius: 12px;
+            padding: 18px;
+            min-width: 0;
+        }
+
+        .visualization-card h3 {
+            color: #245a91;
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+
+        .visualization-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 15px auto;
+        }
+
+        .visualization-card p {
+            color: #526477;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .visualization-card a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #245a91;
+            font-weight: 600;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .full-width img {
+            max-width: 900px;
+        }
+
+        .findings-list {
+            padding-left: 25px;
+        }
+
+        .findings-list li {
+            margin-bottom: 18px;
+            line-height: 1.8;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            background: #eaf1fa;
+            color: #245a91;
+            padding: 9px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #245a91;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .visualization-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .summary-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .summary-item {
+                padding: 14px;
+            }
+
+            .summary-item strong {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
 
-<header>
-    <h1>Using Early Engagement Behaviors to Predict Student Success</h1>
-    <p>Educational Data Analytics | Predictive Modeling | Learning Analytics</p>
-    <a href="index.html">← Back to Portfolio</a>
-</header>
+    <!-- HEADER -->
 
-<section>
+    <header>
 
-<h2>Project Overview</h2>
+        <h1>
+            Using Early Engagement Behaviors
+            to Predict Student Success
+        </h1>
 
-<p>
-    This project analyzed <strong>22,437 student records</strong> from the
-    <strong>Open University Learning Analytics Dataset (OULAD)</strong> to investigate
-    whether early engagement behaviors can predict academic success in online learning environments.
-</p>
+        <p>
+            Educational Data Analytics |
+            Predictive Modeling |
+            Learning Analytics
+        </p>
 
-<p>
-    Using logistic regression and learning analytics techniques, I examined how
-    <strong>Early Clicks</strong> and <strong>Early Active Days</strong>
-    influence the likelihood of students successfully completing a course.
-    The project demonstrates the application of educational data mining and predictive analytics
-    to identify actionable indicators of student success.
-</p>
+        <p>
+            Investigating the relationship between
+            students' early online engagement
+            and academic success.
+        </p>
 
-<p>
-    One of the key findings was that <strong>Early Clicks emerged as the strongest predictor of student success</strong>,
-    highlighting the importance of student interaction with learning materials during the first three weeks of a course.
-</p>
+        <a href="index.html">
+            ← Back to Portfolio
+        </a>
 
-<h2>Research Question</h2>
+    </header>
 
-<p>
-    Can early engagement behaviors predict whether a student will successfully pass a course?
-</p>
 
-<h2>Dataset</h2>
+    <!-- NAVIGATION -->
 
-<ul>
-    <li>Open University Learning Analytics Dataset (OULAD)</li>
-    <li>22,437 student records</li>
-    <li>Online learning engagement data</li>
-    <li>Pass/Fail course outcome variable</li>
-</ul>
+    <nav class="project-navigation">
+        <a href="#overview">Overview</a>
+        <a href="#question">Research Question</a>
+        <a href="#dataset">Dataset</a>
+        <a href="#methods">Methods</a>
+        <a href="#visualizations">Visualizations</a>
+        <a href="#findings">Findings</a>
+        <a href="#skills">Skills</a>
+    </nav>
 
-<h2>Methods</h2>
 
-<ul>
-    <li>Data Cleaning and Preparation</li>
-    <li>Feature Engineering</li>
-    <li>Exploratory Data Analysis (EDA)</li>
-    <li>Logistic Regression Modeling</li>
-    <li>Odds Ratio Analysis</li>
-    <li>Predictive Probability Modeling</li>
-    <li>Data Visualization</li>
-</ul>
+    <main>
 
-<h2>Tools Used</h2>
+        <!-- PROJECT OVERVIEW -->
 
-<p>
-    R • ggplot2 • Logistic Regression • Statistical Learning • Data Visualization
-</p>
+        <section id="overview">
 
-<h2>Key Visualizations</h2>
+            <h2>Project Overview</h2>
 
-<h3>Distribution of Early Clicks</h3>
-<img src="images/student_success_histogram_clicks.png" alt="Distribution of Early Clicks" width="900">
+            <div class="card">
 
-<h3>Distribution of Early Active Days</h3>
-<img src="images/student_success_histogram_active_days.png" alt="Distribution of Early Active Days" width="900">
+                <p>
+                    This project analyzed
+                    <strong>22,437 student records</strong>
+                    from the
+                    <strong>
+                        Open University Learning
+                        Analytics Dataset (OULAD)
+                    </strong>
+                    to investigate whether early
+                    engagement behaviors can predict
+                    academic success in online
+                    learning environments.
+                </p>
 
-<h3>Early Clicks by Course Outcome</h3>
-<img src="images/student_success_boxplot_clicks.png" alt="Early Clicks by Course Outcome" width="900">
+                <p>
+                    Using logistic regression
+                    and learning analytics techniques,
+                    I examined how
+                    <strong>Early Clicks</strong>
+                    and
+                    <strong>Early Active Days</strong>
+                    relate to the likelihood
+                    of students successfully
+                    completing a course.
+                </p>
 
-<h3>Early Active Days by Course Outcome</h3>
-<img src="images/student_success_boxplot_active_days.png" alt="Early Active Days by Course Outcome" width="900">
+                <p>
+                    The project demonstrates
+                    the application of educational
+                    data mining and predictive
+                    analytics to identify
+                    indicators of student success.
+                </p>
 
-<h3>Predicted Probability of Passing by Early Clicks</h3>
-<img src="images/student_success_probability_clicks_only.png" alt="Predicted Probability of Passing by Early Clicks" width="900">
+                <div class="summary-grid">
 
-<h3>Predicted Probability of Passing by Early Engagement Behaviors</h3>
-<img src="images/student_success_probability_clicks_and_active_days.png" alt="Predicted Probability of Passing by Early Engagement Behaviors" width="900">
+                    <div class="summary-item">
+                        <strong>22,437</strong>
+                        <span>Student Records</span>
+                    </div>
 
-<h3>Odds Ratios for Passing</h3>
-<img src="images/student_success_odds_ratio.png" alt="Odds Ratios for Passing" width="900">
+                    <div class="summary-item">
+                        <strong>21 Days</strong>
+                        <span>Early Engagement Period</span>
+                    </div>
 
-<h2>Key Findings</h2>
+                    <div class="summary-item">
+                        <strong>2</strong>
+                        <span>Engagement Predictors</span>
+                    </div>
 
-<ul>
-    <li>Students who passed their courses demonstrated substantially higher levels of early engagement than students who failed.</li>
+                    <div class="summary-item">
+                        <strong>R</strong>
+                        <span>Analysis Software</span>
+                    </div>
 
-    <li><strong>Early Clicks emerged as the strongest predictor of student success</strong>, indicating that students who interacted more frequently with course materials during the first 21 days were substantially more likely to pass.</li>
+                </div>
 
-    <li>Early Active Days also contributed to prediction accuracy, suggesting that both engagement intensity and engagement consistency are important indicators of academic success.</li>
+                <div class="research-highlight">
 
-    <li>The probability of passing increased consistently as engagement levels increased.</li>
+                    <strong>Key Finding</strong>
 
-    <li>Early engagement metrics can serve as useful indicators for identifying students who may benefit from timely academic support.</li>
+                    <p>
+                        Early Clicks emerged as
+                        the strongest predictor
+                        of student success in
+                        the analysis, highlighting
+                        the relationship between
+                        interaction with learning
+                        materials during the
+                        first three weeks and
+                        course outcomes.
+                    </p>
 
-    <li>Learning analytics can provide data-driven insights to support student retention and success initiatives.</li>
-</ul>
+                </div>
 
-<h2>Skills Demonstrated</h2>
+            </div>
 
-<p>
-    Learning Analytics • Educational Data Mining • Predictive Modeling • Logistic Regression • Statistical Analysis • Data Visualization • Research Design • Data Interpretation
-</p>
+        </section>
 
-</section>
+
+        <!-- RESEARCH QUESTION -->
+
+        <section id="question">
+
+            <h2>Research Question</h2>
+
+            <div class="card">
+
+                <div class="research-highlight">
+
+                    <p>
+                        Can early engagement
+                        behaviors predict whether
+                        a student will successfully
+                        pass a course?
+                    </p>
+
+                </div>
+
+                <p>
+                    The analysis examined
+                    students' interactions
+                    with online learning
+                    materials during
+                    the first 21 days
+                    of a course.
+                </p>
+
+                <p>
+                    Two engagement indicators
+                    were considered:
+                    the number of early clicks
+                    and the number of days
+                    students were active
+                    in the learning environment.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- DATASET -->
+
+        <section id="dataset">
+
+            <h2>Dataset</h2>
+
+            <div class="card">
+
+                <p>
+                    The study used the
+                    <strong>
+                        Open University Learning
+                        Analytics Dataset (OULAD)
+                    </strong>,
+                    which contains information
+                    about students' online
+                    learning activities
+                    and academic outcomes.
+                </p>
+
+                <p>
+                    The analysis included
+                    22,437 student records.
+                </p>
+
+                <div class="method-grid">
+
+                    <div class="method-item">
+
+                        <h3>Data Source</h3>
+
+                        <p>
+                            Open University
+                            Learning Analytics
+                            Dataset (OULAD)
+                        </p>
+
+                    </div>
+
+                    <div class="method-item">
+
+                        <h3>Early Clicks</h3>
+
+                        <p>
+                            Number of student
+                            interactions with
+                            online learning
+                            materials during
+                            the first 21 days.
+                        </p>
+
+                    </div>
+
+                    <div class="method-item">
+
+                        <h3>Early Active Days</h3>
+
+                        <p>
+                            Number of days
+                            students actively
+                            engaged with
+                            the online
+                            learning platform
+                            during the
+                            early period.
+                        </p>
+
+                    </div>
+
+                    <div class="method-item">
+
+                        <h3>Course Outcome</h3>
+
+                        <p>
+                            Pass or Fail
+                            outcome used
+                            in the
+                            logistic regression
+                            analysis.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- METHODS -->
+
+        <section id="methods">
+
+            <h2>Research Methods</h2>
+
+            <div class="card">
+
+                <p>
+                    The project used
+                    quantitative data
+                    analysis and
+                    predictive modeling
+                    techniques.
+                </p>
+
+                <div class="method-grid">
+
+                    <div class="method-item">
+
+                        <h3>Data Preparation</h3>
+
+                        <p>
+                            Data cleaning
+                            and preparation
+                            for statistical
+                            analysis.
+                        </p>
+
+                    </div>
+
+                    <div class="method-item">
+
+                        <h3>Feature Engineering</h3>
+
+                        <p>
+                            Preparation of
+                            Early Clicks
+                            and Early Active
+                            Days as predictors.
+                        </p>
+
+                    </div>
+
+                    <div class="method-item">
+
+                        <h3>Exploratory Data Analysis</h3>
+
+                        <p>
+                            Examination of
+                            engagement
+                            distributions
+                            and differences
+                            by course outcome.
+                        </p>
+
+                    </div>
+
+                    <div class="method-item">
+
+                        <h3>Logistic Regression</h3>
+
+                        <p>
+                            Modeling the
+                            relationship
+                            between early
+                            engagement
+                            and the likelihood
+                            of passing.
+                        </p>
+
+                    </div>
+
+                    <div class="method-item">
+
+                        <h3>Odds Ratio Analysis</h3>
+
+                        <p>
+                            Interpreting
+                            the relationships
+                            between predictors
+                            and the odds
+                            of passing.
+                        </p>
+
+                    </div>
+
+                    <div class="method-item">
+
+                        <h3>Predictive Visualization</h3>
+
+                        <p>
+                            Visualizing
+                            predicted
+                            probabilities
+                            and model results
+                            using R.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <h3>Tools Used</h3>
+
+                <p>
+                    R | ggplot2 |
+                    Logistic Regression |
+                    Statistical Learning |
+                    Data Visualization
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- VISUALIZATIONS -->
+
+        <section id="visualizations">
+
+            <h2>Key Visualizations</h2>
+
+            <div class="card">
+
+                <p>
+                    The following visualizations
+                    were created as part of
+                    the analysis. They show
+                    engagement distributions,
+                    differences by course outcome,
+                    and logistic regression
+                    predictions.
+                </p>
+
+                <div class="visualization-grid">
+
+                    <!-- HISTOGRAM: EARLY CLICKS -->
+
+                    <div class="visualization-card">
+
+                        <h3>
+                            Distribution of Early Clicks
+                        </h3>
+
+                        <img
+                            src="images/student_success_histogram_clicks.png"
+                            alt="Histogram showing the distribution of early clicks"
+                            loading="lazy"
+                        >
+
+                        <p>
+                            Distribution of
+                            student click activity
+                            during the first
+                            21 days of the course.
+                        </p>
+
+                        <a
+                            href="images/student_success_histogram_clicks.png"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            View Full Image
+                        </a>
+
+                    </div>
+
+
+                    <!-- HISTOGRAM: ACTIVE DAYS -->
+
+                    <div class="visualization-card">
+
+                        <h3>
+                            Distribution of Early Active Days
+                        </h3>
+
+                        <img
+                            src="images/student_success_histogram_active_days.png"
+                            alt="Histogram showing the distribution of early active days"
+                            loading="lazy"
+                        >
+
+                        <p>
+                            Distribution of
+                            the number of days
+                            students were active
+                            during the early
+                            engagement period.
+                        </p>
+
+                        <a
+                            href="images/student_success_histogram_active_days.png"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            View Full Image
+                        </a>
+
+                    </div>
+
+
+                    <!-- BOXPLOT: CLICKS -->
+
+                    <div class="visualization-card">
+
+                        <h3>
+                            Early Clicks by Course Outcome
+                        </h3>
+
+                        <img
+                            src="images/student_success_boxplot_clicks.png"
+                            alt="Boxplot comparing early clicks by pass or fail outcome"
+                            loading="lazy"
+                        >
+
+                        <p>
+                            Comparison of
+                            early click activity
+                            between students
+                            who passed and
+                            those who failed.
+                        </p>
+
+                        <a
+                            href="images/student_success_boxplot_clicks.png"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            View Full Image
+                        </a>
+
+                    </div>
+
+
+                    <!-- BOXPLOT: ACTIVE DAYS -->
+
+                    <div class="visualization-card">
+
+                        <h3>
+                            Early Active Days by Course Outcome
+                        </h3>
+
+                        <img
+                            src="images/student_success_boxplot_active_days.png"
+                            alt="Boxplot comparing early active days by course outcome"
+                            loading="lazy"
+                        >
+
+                        <p>
+                            Comparison of
+                            early active days
+                            between students
+                            who passed and
+                            those who failed.
+                        </p>
+
+                        <a
+                            href="images/student_success_boxplot_active_days.png"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            View Full Image
+                        </a>
+
+                    </div>
+
+
+                    <!-- PROBABILITY: CLICKS ONLY -->
+
+                    <div class="visualization-card">
+
+                        <h3>
+                            Predicted Probability of Passing
+                            by Early Clicks
+                        </h3>
+
+                        <img
+                            src="images/student_success_probability_clicks_only.png"
+                            alt="Predicted probability of passing based on early clicks"
+                            loading="lazy"
+                        >
+
+                        <p>
+                            Logistic regression
+                            visualization showing
+                            how the predicted
+                            probability of passing
+                            changes with
+                            early click activity.
+                        </p>
+
+                        <a
+                            href="images/student_success_probability_clicks_only.png"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            View Full Image
+                        </a>
+
+                    </div>
+
+
+                    <!-- PROBABILITY: BOTH PREDICTORS -->
+
+                    <div class="visualization-card">
+
+                        <h3>
+                            Predicted Probability of Passing
+                            by Early Engagement Behaviors
+                        </h3>
+
+                        <img
+                            src="images/student_success_probability_clicks_and_active_days.png"
+                            alt="Predicted probability of passing using early clicks and early active days"
+                            loading="lazy"
+                        >
+
+                        <p>
+                            Visualization
+                            of predicted
+                            passing probabilities
+                            using early clicks
+                            and early active days.
+                        </p>
+
+                        <a
+                            href="images/student_success_probability_clicks_and_active_days.png"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            View Full Image
+                        </a>
+
+                    </div>
+
+
+                    <!-- ODDS RATIOS -->
+
+                    <div class="visualization-card full-width">
+
+                        <h3>
+                            Odds Ratios for Passing
+                        </h3>
+
+                        <img
+                            src="images/student_success_odds_ratio.png"
+                            alt="Odds ratio visualization for logistic regression predictors"
+                            loading="lazy"
+                        >
+
+                        <p>
+                            Odds ratio visualization
+                            used to interpret
+                            the relationship
+                            between early
+                            engagement predictors
+                            and the odds
+                            of passing a course.
+                        </p>
+
+                        <a
+                            href="images/student_success_odds_ratio.png"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            View Full Image
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- KEY FINDINGS -->
+
+        <section id="findings">
+
+            <h2>Key Findings</h2>
+
+            <div class="card">
+
+                <ul class="findings-list">
+
+                    <li>
+                        <strong>
+                            Students who passed
+                            demonstrated higher
+                            early engagement.
+                        </strong>
+                        The analysis showed
+                        differences in early
+                        engagement between
+                        students who passed
+                        and those who failed.
+                    </li>
+
+                    <li>
+                        <strong>
+                            Early Clicks emerged
+                            as the strongest predictor.
+                        </strong>
+                        Students with more
+                        interactions with
+                        learning materials
+                        during the first
+                        21 days were more
+                        likely to pass.
+                    </li>
+
+                    <li>
+                        <strong>
+                            Early Active Days
+                            also contributed
+                            to prediction.
+                        </strong>
+                        The findings suggest
+                        that engagement
+                        consistency, alongside
+                        engagement intensity,
+                        is relevant to
+                        academic outcomes.
+                    </li>
+
+                    <li>
+                        <strong>
+                            Predicted passing
+                            probability increased
+                            with engagement.
+                        </strong>
+                        The logistic regression
+                        visualizations showed
+                        higher predicted
+                        probabilities of passing
+                        at higher levels
+                        of early engagement.
+                    </li>
+
+                    <li>
+                        <strong>
+                            Early engagement
+                            may help identify
+                            students who need support.
+                        </strong>
+                        Engagement indicators
+                        could provide useful
+                        information for
+                        educators seeking
+                        to recognize
+                        potential academic
+                        difficulties earlier.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRACTICAL IMPLICATIONS -->
+
+        <section>
+
+            <h2>Implications for Education</h2>
+
+            <div class="card">
+
+                <p>
+                    The findings highlight
+                    the potential value
+                    of examining early
+                    student engagement
+                    when considering
+                    academic support.
+                </p>
+
+                <p>
+                    Information about
+                    student activity
+                    could help educators
+                    recognize engagement
+                    patterns and decide
+                    when additional
+                    follow-up may
+                    be appropriate.
+                </p>
+
+                <p>
+                    However, online
+                    engagement measures
+                    do not fully capture
+                    student understanding,
+                    motivation, or
+                    personal circumstances.
+                </p>
+
+                <p>
+                    Predictive information
+                    should therefore
+                    support educators'
+                    decisions rather
+                    than replace
+                    professional judgment.
+                </p>
+
+                <p>
+                    This project examined
+                    predictive relationships.
+                    It did not evaluate
+                    an implemented
+                    student intervention.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SKILLS -->
+
+        <section id="skills">
+
+            <h2>Skills Demonstrated</h2>
+
+            <div class="card">
+
+                <div class="skills-container">
+
+                    <span class="skill-tag">
+                        Learning Analytics
+                    </span>
+
+                    <span class="skill-tag">
+                        Educational Data Mining
+                    </span>
+
+                    <span class="skill-tag">
+                        Predictive Modeling
+                    </span>
+
+                    <span class="skill-tag">
+                        Logistic Regression
+                    </span>
+
+                    <span class="skill-tag">
+                        Statistical Analysis
+                    </span>
+
+                    <span class="skill-tag">
+                        Data Cleaning
+                    </span>
+
+                    <span class="skill-tag">
+                        Feature Engineering
+                    </span>
+
+                    <span class="skill-tag">
+                        Data Visualization
+                    </span>
+
+                    <span class="skill-tag">
+                        Research Design
+                    </span>
+
+                    <span class="skill-tag">
+                        Data Interpretation
+                    </span>
+
+                    <span class="skill-tag">
+                        R
+                    </span>
+
+                    <span class="skill-tag">
+                        ggplot2
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJECT REFLECTION -->
+
+        <section>
+
+            <h2>Project Reflection</h2>
+
+            <div class="card">
+
+                <p>
+                    This project brought
+                    together my interests
+                    in education,
+                    data analysis,
+                    and understanding
+                    student learning
+                    experiences.
+                </p>
+
+                <p>
+                    Analyzing student
+                    engagement data
+                    provided practical
+                    experience in
+                    preparing data,
+                    fitting logistic
+                    regression models,
+                    and communicating
+                    statistical relationships
+                    through visualizations.
+                </p>
+
+                <p>
+                    The project also
+                    reinforced the
+                    importance of
+                    interpreting
+                    educational data
+                    carefully.
+                </p>
+
+                <p>
+                    While engagement
+                    measures can provide
+                    useful information,
+                    they represent only
+                    part of a student's
+                    learning experience.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- RETURN HOME -->
+
+        <section>
+
+            <div class="card">
+
+                <a class="back-link"
+                   href="index.html">
+                    ← Return to Portfolio Home
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            &copy; 2026
+            Suweibatu Munahima Sarene Azuma
+        </p>
+
+    </footer>
 
 </body>
 </html>
-
