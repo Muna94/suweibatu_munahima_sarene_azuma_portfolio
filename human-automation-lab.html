@@ -1,0 +1,1420 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Human-Centered Automation of a School Computing Laboratory. A Human Factors and UX Design case study involving task analysis, function allocation, Figma dashboard design, and scenario-based assessment."
+    >
+
+    <title>
+        Human-Centered Computing Laboratory | Research Portfolio
+    </title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .project-subtitle {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .project-meta {
+            color: #526477;
+            font-weight: 600;
+            line-height: 1.8;
+        }
+
+        .project-note {
+            background: #eef5ff;
+            border-left: 4px solid #3674b5;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .dashboard-container {
+            margin: 25px 0;
+            padding: 20px;
+            background: #f8fafc;
+            border: 1px solid #dce4ed;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .dashboard-container img {
+            display: block;
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 8px;
+            border: 1px solid #dce4ed;
+        }
+
+        .dashboard-caption {
+            color: #526477;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+
+        .research-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .research-table th,
+        .research-table td {
+            padding: 13px;
+            border: 1px solid #dce4ed;
+            text-align: left;
+            vertical-align: top;
+            line-height: 1.6;
+        }
+
+        .research-table th {
+            background: #eaf1fa;
+            color: #213e61;
+        }
+
+        .research-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(230px, 1fr)
+            );
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .feature-box {
+            padding: 18px;
+            border-radius: 10px;
+            background: #f1f6fd;
+            border: 1px solid #dce6f3;
+        }
+
+        .feature-box h4 {
+            margin-top: 0;
+            color: #245a91;
+        }
+
+        .status-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .status-item {
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .status-normal {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .status-fault {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .status-unknown {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .status-off {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .research-highlight {
+            padding: 20px;
+            background: #eef5ff;
+            border-radius: 10px;
+            border-left: 4px solid #3674b5;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 600px) {
+
+            .dashboard-container {
+                padding: 10px;
+            }
+
+            .research-table th,
+            .research-table td {
+                padding: 9px;
+                font-size: 0.9rem;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>
+            Human-Centered Automation of a
+            School Computing Laboratory
+        </h1>
+
+        <h3>
+            Human Factors | Human-Automation Interaction |
+            UX Design
+        </h3>
+
+        <p class="project-subtitle">
+            A conceptual computing laboratory monitoring system
+            designed to support teachers through automation
+            while preserving human oversight and control.
+        </p>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#overview">Overview</a>
+        <a href="#research">Research</a>
+        <a href="#design">Dashboard Design</a>
+        <a href="#scenarios">Scenarios</a>
+        <a href="#reflection">Reflection</a>
+    </nav>
+
+
+    <main>
+
+        <!-- PROJECT OVERVIEW -->
+
+        <section id="overview">
+
+            <h2>Project Overview</h2>
+
+            <div class="card">
+
+                <p class="project-meta">
+                    Arizona State University |
+                    HSE 524 Human-Automation Interaction |
+                    Fall 2026
+                </p>
+
+                <p>
+                    This project explores how human-centered
+                    automation could support teachers in
+                    managing school computing laboratories.
+                    The design is informed by my previous
+                    experience teaching Information and
+                    Communication Technology at Tamale Girls
+                    Senior High School in Ghana.
+                </p>
+
+                <p>
+                    Preparing a computing laboratory for
+                    practical lessons involves checking
+                    individual computers, identifying
+                    equipment problems, troubleshooting
+                    faults, and confirming that computers
+                    are properly shut down after lessons.
+                </p>
+
+                <p>
+                    I proposed a conceptual automated
+                    laboratory management system that
+                    would support routine monitoring
+                    activities through a teacher-facing
+                    dashboard while allowing teachers
+                    to remain responsible for important
+                    decisions.
+                </p>
+
+                <div class="project-note">
+
+                    <strong>Project Status:</strong>
+                    Conceptual design developed in Figma.
+                    The system has not been implemented
+                    or evaluated with participants.
+                    Functional prototyping and usability
+                    testing are future research activities.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESEARCH PROBLEM -->
+
+        <section id="research">
+
+            <h2>The Problem</h2>
+
+            <div class="card">
+
+                <p>
+                    Having computers in a school does
+                    not necessarily mean they are ready
+                    for teaching and learning.
+                </p>
+
+                <p>
+                    In a computing laboratory, teachers
+                    may need to start computers,
+                    check network connections,
+                    identify faulty keyboards or mice,
+                    respond to equipment problems,
+                    and verify shutdown after lessons.
+                </p>
+
+                <p>
+                    These activities can take time
+                    away from practical instruction,
+                    especially when problems are
+                    discovered after students have
+                    started working.
+                </p>
+
+                <p>
+                    Although automated monitoring
+                    could help with some routine
+                    activities, it introduces
+                    new challenges.
+                </p>
+
+                <p>
+                    Monitoring information may be
+                    inaccurate or incomplete.
+                    Some equipment faults may not
+                    be detectable automatically.
+                    Teachers must therefore be
+                    able to understand system
+                    information, verify conditions,
+                    and intervene when necessary.
+                </p>
+
+                <div class="research-highlight">
+
+                    <strong>Design Question:</strong>
+
+                    <p>
+                        How can routine computing
+                        laboratory monitoring be
+                        automated without reducing
+                        teachers' awareness of
+                        laboratory conditions
+                        or their ability to
+                        make decisions and intervene?
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJECT GOALS -->
+
+        <section>
+
+            <h2>Project Goals</h2>
+
+            <div class="card">
+
+                <ul>
+
+                    <li>
+                        Reduce the need for repetitive
+                        manual checks of computer
+                        power and connectivity.
+                    </li>
+
+                    <li>
+                        Provide clear information
+                        about computer readiness
+                        and equipment conditions.
+                    </li>
+
+                    <li>
+                        Notify teachers about
+                        detectable equipment faults.
+                    </li>
+
+                    <li>
+                        Distinguish normal, faulty,
+                        unknown, and powered-off
+                        computer conditions.
+                    </li>
+
+                    <li>
+                        Support computer startup
+                        and shutdown where
+                        technically feasible.
+                    </li>
+
+                    <li>
+                        Preserve teacher authority
+                        to verify information,
+                        investigate problems,
+                        and make decisions.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESEARCH APPROACH -->
+
+        <section>
+
+            <h2>Research and Design Approach</h2>
+
+            <div class="card">
+
+                <p>
+                    I used a literature-informed
+                    conceptual design approach
+                    grounded in human-automation
+                    interaction principles.
+                </p>
+
+                <p>
+                    The process involved examining
+                    existing laboratory management
+                    challenges, analyzing current
+                    activities, allocating functions
+                    between people and automation,
+                    designing a dashboard in Figma,
+                    and considering representative
+                    operating scenarios.
+                </p>
+
+                <div class="feature-grid">
+
+                    <div class="feature-box">
+                        <h4>1. Literature Review</h4>
+                        <p>
+                            Reviewed computing
+                            laboratory management
+                            systems and research
+                            on human-automation
+                            interaction.
+                        </p>
+                    </div>
+
+                    <div class="feature-box">
+                        <h4>2. Task Analysis</h4>
+                        <p>
+                            Examined laboratory
+                            activities before,
+                            during, and after
+                            practical lessons.
+                        </p>
+                    </div>
+
+                    <div class="feature-box">
+                        <h4>3. Function Allocation</h4>
+                        <p>
+                            Identified responsibilities
+                            for teachers, students,
+                            and automation.
+                        </p>
+                    </div>
+
+                    <div class="feature-box">
+                        <h4>4. Dashboard Design</h4>
+                        <p>
+                            Designed a conceptual
+                            teacher-facing dashboard
+                            using Figma.
+                        </p>
+                    </div>
+
+                    <div class="feature-box">
+                        <h4>5. Scenario Assessment</h4>
+                        <p>
+                            Examined normal operations,
+                            equipment faults,
+                            inaccurate alerts,
+                            and automation failures.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TASK ANALYSIS -->
+
+        <section>
+
+            <h2>Task Analysis</h2>
+
+            <div class="card">
+
+                <p>
+                    I analyzed computing laboratory
+                    activities before, during,
+                    and after practical lessons.
+                </p>
+
+                <p>
+                    The analysis drew on my previous
+                    teaching experience and helped
+                    identify repetitive tasks,
+                    possible equipment problems,
+                    and opportunities for
+                    automation support.
+                </p>
+
+                <div class="table-container">
+
+                    <table class="research-table">
+
+                        <thead>
+                            <tr>
+                                <th>Lesson Stage</th>
+                                <th>Activity</th>
+                                <th>Potential Problem</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>Before Lesson</td>
+                                <td>Start computers</td>
+                                <td>
+                                    Some computers
+                                    may fail to start.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Before Lesson</td>
+                                <td>Check computer startup</td>
+                                <td>
+                                    Requires checking
+                                    individual computers.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Before Lesson</td>
+                                <td>Verify equipment</td>
+                                <td>
+                                    Some keyboard and
+                                    mouse faults may
+                                    remain unnoticed.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>During Lesson</td>
+                                <td>
+                                    Respond to student
+                                    equipment complaints
+                                </td>
+                                <td>
+                                    Interrupts instruction.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>During Lesson</td>
+                                <td>Troubleshoot faults</td>
+                                <td>
+                                    Takes time away
+                                    from teaching.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>After Lesson</td>
+                                <td>
+                                    Verify computer shutdown
+                                </td>
+                                <td>
+                                    Requires checking
+                                    individual computers.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>After Lesson</td>
+                                <td>
+                                    Check lights, fans,
+                                    and air conditioning
+                                </td>
+                                <td>
+                                    Equipment may
+                                    remain running.
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FUNCTION ALLOCATION -->
+
+        <section>
+
+            <h2>Function Allocation</h2>
+
+            <div class="card">
+
+                <p>
+                    A central part of the design
+                    was deciding which functions
+                    should be handled by automation
+                    and which should remain
+                    under human control.
+                </p>
+
+                <p>
+                    The proposed allocation
+                    follows the principle
+                    that routine monitoring
+                    can be automated while
+                    teachers retain responsibility
+                    for decisions requiring
+                    judgment and intervention.
+                </p>
+
+                <div class="table-container">
+
+                    <table class="research-table">
+
+                        <thead>
+                            <tr>
+                                <th>Function</th>
+                                <th>Allocation</th>
+                                <th>Responsibility</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    Determine laboratory
+                                    preparation needs
+                                </td>
+                                <td>Human</td>
+                                <td>
+                                    Teacher decides
+                                    when preparation
+                                    is required.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Initiate computer startup
+                                </td>
+                                <td>Human + Automation</td>
+                                <td>
+                                    Teacher authorizes
+                                    startup. Automation
+                                    executes where supported.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Check computer power
+                                    and connectivity
+                                </td>
+                                <td>Automation</td>
+                                <td>
+                                    System collects
+                                    available status
+                                    information.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Verify instructional
+                                    readiness
+                                </td>
+                                <td>Human + Automation</td>
+                                <td>
+                                    System reports status.
+                                    Teacher confirms
+                                    readiness.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Identify equipment faults
+                                </td>
+                                <td>Human + Automation</td>
+                                <td>
+                                    System identifies
+                                    detectable faults.
+                                    Teachers and students
+                                    report other problems.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Troubleshoot problems
+                                </td>
+                                <td>Human</td>
+                                <td>
+                                    Teacher investigates
+                                    and determines
+                                    appropriate action.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Generate detectable
+                                    fault alerts
+                                </td>
+                                <td>Automation</td>
+                                <td>
+                                    System notifies
+                                    teachers of
+                                    detected problems.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Verify computer shutdown
+                                </td>
+                                <td>Human + Automation</td>
+                                <td>
+                                    System reports status.
+                                    Teacher checks
+                                    unresolved cases.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Respond to automation
+                                    failures
+                                </td>
+                                <td>Human</td>
+                                <td>
+                                    Teacher uses manual
+                                    checks and intervention.
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p>
+                    These allocations describe
+                    proposed system responsibilities,
+                    not implemented or
+                    validated capabilities.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- DASHBOARD DESIGN -->
+
+        <section id="design">
+
+            <h2>Figma Dashboard Design</h2>
+
+            <div class="card">
+
+                <p>
+                    Based on the task analysis
+                    and function allocation,
+                    I designed a conceptual
+                    teacher-facing dashboard
+                    using Figma.
+                </p>
+
+                <p>
+                    The interface is intended
+                    to help teachers monitor
+                    computer conditions,
+                    recognize problems,
+                    understand uncertainty,
+                    and take appropriate action.
+                </p>
+
+                <div class="dashboard-container">
+
+                    <img
+                        src="images/computing-lab-dashboard.png"
+                        alt="Figma conceptual dashboard showing computing laboratory status cards, computer-status table, equipment alerts, and teacher actions."
+                        loading="lazy"
+                    >
+
+                    <p class="dashboard-caption">
+                        Figure 1. Conceptual teacher-facing
+                        computing laboratory monitoring dashboard
+                        designed in Figma. All displayed values
+                        are illustrative.
+                    </p>
+
+                </div>
+
+                <p>
+                    The dashboard includes summary
+                    cards, a computer-status table,
+                    equipment alerts, and
+                    teacher-action controls.
+                </p>
+
+            </div>
+
+
+            <!-- STATUS CARDS -->
+
+            <h3>Computer Status Information</h3>
+
+            <div class="card">
+
+                <p>
+                    The dashboard distinguishes
+                    four computer conditions.
+                </p>
+
+                <div class="status-list">
+
+                    <span class="status-item status-normal">
+                        Normal
+                    </span>
+
+                    <span class="status-item status-fault">
+                        Fault
+                    </span>
+
+                    <span class="status-item status-unknown">
+                        Unknown
+                    </span>
+
+                    <span class="status-item status-off">
+                        Off
+                    </span>
+
+                </div>
+
+                <p>
+                    These categories help
+                    teachers distinguish
+                    computers reporting
+                    normal conditions from
+                    those requiring attention.
+                </p>
+
+                <p>
+                    The unknown category
+                    is particularly important
+                    because the system may
+                    not always have enough
+                    information to confirm
+                    a computer's condition.
+                </p>
+
+                <p>
+                    A normal status also
+                    does not necessarily
+                    guarantee that a computer
+                    is ready for instruction.
+                    Some faults may still
+                    require manual checks.
+                </p>
+
+            </div>
+
+
+            <!-- DESIGN FEATURES -->
+
+            <h3>Dashboard Features and Design Decisions</h3>
+
+            <div class="card">
+
+                <div class="feature-grid">
+
+                    <div class="feature-box">
+
+                        <h4>Status Summary Cards</h4>
+
+                        <p>
+                            Provide a quick overview
+                            of normal, faulty,
+                            unknown, and powered-off
+                            computers.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-box">
+
+                        <h4>Computer Status Table</h4>
+
+                        <p>
+                            Displays individual
+                            computer conditions.
+                            Ten computers are shown
+                            at a time, with scrolling
+                            for additional records.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-box">
+
+                        <h4>Equipment Alerts</h4>
+
+                        <p>
+                            Identify affected
+                            computers, describe
+                            problems, and support
+                            teacher investigation.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-box">
+
+                        <h4>Unknown Conditions</h4>
+
+                        <p>
+                            Communicate when
+                            monitoring information
+                            is incomplete or
+                            uncertain.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-box">
+
+                        <h4>Teacher Controls</h4>
+
+                        <p>
+                            Provide proposed
+                            actions for refreshing
+                            status, acknowledging
+                            alerts, verifying
+                            readiness, and
+                            initiating supported
+                            startup or shutdown.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- HUMAN FACTORS PRINCIPLES -->
+
+        <section>
+
+            <h2>Human Factors Principles Applied</h2>
+
+            <div class="card">
+
+                <h3>Situation Awareness</h3>
+
+                <p>
+                    The dashboard organizes
+                    computer conditions and
+                    alerts to help teachers
+                    understand laboratory
+                    status and identify
+                    problems requiring attention.
+                </p>
+
+                <h3>Function Allocation</h3>
+
+                <p>
+                    Routine information collection
+                    and detectable fault alerts
+                    are assigned to automation.
+                    Teachers remain responsible
+                    for decisions that require
+                    judgment and verification.
+                </p>
+
+                <h3>Automation Transparency</h3>
+
+                <p>
+                    The interface distinguishes
+                    detected faults from unknown
+                    conditions and provides
+                    information about affected
+                    computers.
+                </p>
+
+                <h3>Appropriate Trust</h3>
+
+                <p>
+                    The design avoids assuming
+                    that all automated information
+                    is correct or complete.
+                    Teachers can verify alerts
+                    and investigate uncertain
+                    conditions.
+                </p>
+
+                <h3>Human Supervisory Control</h3>
+
+                <p>
+                    Teachers retain authority
+                    to confirm readiness,
+                    acknowledge alerts,
+                    investigate problems,
+                    and intervene when
+                    automation cannot
+                    complete a task reliably.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCENARIO ASSESSMENT -->
+
+        <section id="scenarios">
+
+            <h2>Scenario-Based Assessment</h2>
+
+            <div class="card">
+
+                <p>
+                    I examined four representative
+                    scenarios to consider how
+                    the proposed system would
+                    communicate information
+                    and support teacher decisions.
+                </p>
+
+                <div class="table-container">
+
+                    <table class="research-table">
+
+                        <thead>
+                            <tr>
+                                <th>Scenario</th>
+                                <th>Situation</th>
+                                <th>Proposed System Response</th>
+                                <th>Teacher Role</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    Normal Laboratory
+                                    Preparation
+                                </td>
+
+                                <td>
+                                    The teacher prepares
+                                    the laboratory for
+                                    a practical lesson.
+                                </td>
+
+                                <td>
+                                    Displays computer
+                                    power and connectivity
+                                    information.
+                                </td>
+
+                                <td>
+                                    Reviews the dashboard,
+                                    checks computers
+                                    when necessary,
+                                    and confirms readiness.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Equipment Fault</td>
+
+                                <td>
+                                    PC-07 loses network
+                                    connectivity during
+                                    a lesson.
+                                </td>
+
+                                <td>
+                                    Displays a connectivity
+                                    alert identifying PC-07.
+                                </td>
+
+                                <td>
+                                    Investigates the
+                                    connection and decides
+                                    what action to take.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Inaccurate Alert</td>
+
+                                <td>
+                                    PC-05 is incorrectly
+                                    reported as disconnected.
+                                </td>
+
+                                <td>
+                                    Displays an alert
+                                    based on inaccurate
+                                    monitoring information.
+                                </td>
+
+                                <td>
+                                    Verifies the condition
+                                    and avoids unnecessary
+                                    corrective action.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Automation Failure</td>
+
+                                <td>
+                                    The system cannot
+                                    confirm whether
+                                    PC-10 has shut down.
+                                </td>
+
+                                <td>
+                                    Displays shutdown
+                                    status as unknown.
+                                </td>
+
+                                <td>
+                                    Checks PC-10 manually
+                                    and shuts it down
+                                    if necessary.
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p>
+                    These scenarios were used
+                    to reason about the proposed
+                    design. They do not represent
+                    empirical usability-testing
+                    results.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- DESIGN OUTCOME -->
+
+        <section>
+
+            <h2>Design Outcome</h2>
+
+            <div class="card">
+
+                <p>
+                    The project produced a
+                    conceptual human-centered
+                    laboratory monitoring
+                    system and a teacher-facing
+                    dashboard designed in Figma.
+                </p>
+
+                <p>
+                    The design integrates
+                    routine computer-status
+                    monitoring, detectable
+                    fault alerts, uncertainty
+                    communication, and
+                    teacher oversight.
+                </p>
+
+                <p>
+                    The task analysis,
+                    function-allocation table,
+                    dashboard, and scenario-based
+                    assessment provide a
+                    foundation for future
+                    functional prototyping
+                    and usability evaluation.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- LIMITATIONS -->
+
+        <section>
+
+            <h2>Limitations</h2>
+
+            <div class="card">
+
+                <ul>
+
+                    <li>
+                        The system is a
+                        conceptual design
+                        and has not been
+                        implemented.
+                    </li>
+
+                    <li>
+                        The dashboard has
+                        not been evaluated
+                        through participant
+                        usability testing.
+                    </li>
+
+                    <li>
+                        Some peripheral faults
+                        may not be detectable
+                        through automated
+                        monitoring.
+                    </li>
+
+                    <li>
+                        Inaccurate alerts
+                        may lead to unnecessary
+                        troubleshooting.
+                    </li>
+
+                    <li>
+                        Implementation would
+                        depend on compatible
+                        equipment, reliable
+                        connectivity, and
+                        technical support.
+                    </li>
+
+                    <li>
+                        The design is informed
+                        by one school context,
+                        so further research
+                        would be needed
+                        before applying it
+                        elsewhere.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- FUTURE WORK -->
+
+        <section>
+
+            <h2>Future Development and Usability Research</h2>
+
+            <div class="card">
+
+                <p>
+                    Future work could involve
+                    building an interactive
+                    dashboard prototype
+                    and conducting usability
+                    testing with ICT teachers.
+                </p>
+
+                <p>
+                    An interactive prototype
+                    could be developed using
+                    React to simulate computer
+                    conditions, equipment alerts,
+                    teacher actions, and
+                    automation failures.
+                </p>
+
+                <p>
+                    Usability research could
+                    examine whether teachers
+                    can understand dashboard
+                    information, identify
+                    problems, verify alerts,
+                    and respond appropriately
+                    to uncertain conditions.
+                </p>
+
+                <p>
+                    Future evaluation could
+                    also examine teacher
+                    workload, situation
+                    awareness, trust in
+                    automation, and
+                    intervention effectiveness.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SKILLS -->
+
+        <section>
+
+            <h2>Skills Demonstrated</h2>
+
+            <div class="card">
+
+                <p>
+                    Human Factors | Human-Automation Interaction |
+                    Human-Computer Interaction | UX Design |
+                    Task Analysis | Function Allocation |
+                    Dashboard Design | Figma |
+                    Situation Awareness | Automation Transparency |
+                    Human Supervisory Control |
+                    Scenario-Based Assessment |
+                    Literature Review | Research Synthesis |
+                    Human-Centered Design
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- REFLECTION -->
+
+        <section id="reflection">
+
+            <h2>Project Reflection</h2>
+
+            <div class="card">
+
+                <p>
+                    This project allowed me
+                    to connect my previous
+                    teaching experience
+                    with my graduate studies
+                    in Human Systems Engineering.
+                </p>
+
+                <p>
+                    Having experienced the
+                    challenges of preparing
+                    and managing computing
+                    laboratories, I wanted
+                    to explore how automation
+                    could support teachers
+                    without removing their
+                    ability to make decisions.
+                </p>
+
+                <p>
+                    The project strengthened
+                    my understanding of
+                    task analysis, function
+                    allocation, dashboard
+                    design, and the importance
+                    of communicating uncertainty
+                    in automated systems.
+                </p>
+
+                <p>
+                    It also reinforced the
+                    importance of designing
+                    technology around the
+                    people who will use it,
+                    rather than focusing
+                    only on technical
+                    capabilities.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Suweibatu Munahima Sarene Azuma
+        </p>
+
+        <p>
+            <a href="index.html">
+                Return to Portfolio Home
+            </a>
+        </p>
+
+    </footer>
+
+</body>
+</html>
