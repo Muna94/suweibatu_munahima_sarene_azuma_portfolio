@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,588 +6,1501 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="description"
-        content="RuralTech Bridge educational technology initiative developing offline and low-resource approaches to computer science education for rural schools in Ghana."
-    > 
+    <meta name="description"
+          content="RuralTech Bridge is developing Computer Science Without Computers, an offline educational learning kit for rural and underserved schools in Ghana.">
 
-    <title>RuralTech Bridge | Computer Science Without Computers</title>
+    <title>
+        RuralTech Bridge | Computer Science Without Computers
+    </title>
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .project-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            padding: 16px 20px;
+            background: #edf4fc;
+        }
+
+        .project-nav a {
+            color: #245a91;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .project-nav a:hover {
+            text-decoration: underline;
+        }
+
+        .project-meta {
+            color: #526477;
+            font-weight: 600;
+            line-height: 1.8;
+        }
+
+        .project-status {
+            display: inline-block;
+            padding: 8px 14px;
+            margin: 8px 0 18px;
+            background: #eaf1fa;
+            color: #245a91;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .highlight {
+            background: #eef5ff;
+            border-left: 4px solid #3674b5;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 22px 0;
+        }
+
+        .highlight p:last-child {
+            margin-bottom: 0;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(170px, 1fr));
+            gap: 16px;
+            margin: 25px 0;
+        }
+
+        .summary-item {
+            background: #f1f6fd;
+            border: 1px solid #dce6f3;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .summary-item strong {
+            display: block;
+            color: #245a91;
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .summary-item span {
+            color: #526477;
+            font-size: 0.95rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
+            margin-top: 22px;
+        }
+
+        .feature-box {
+            background: #f8fafc;
+            border: 1px solid #dce4ed;
+            border-radius: 10px;
+            padding: 20px;
+            min-width: 0;
+        }
+
+        .feature-box h3 {
+            color: #245a91;
+            margin-top: 0;
+        }
+
+        .feature-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 25px;
+            margin-top: 25px;
+            border-left: 3px solid #c5d9ee;
+        }
+
+        .timeline-item {
+            position: relative;
+            background: #f8fafc;
+            border: 1px solid #dce4ed;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -34px;
+            top: 24px;
+            width: 14px;
+            height: 14px;
+            background: #3674b5;
+            border: 3px solid #ffffff;
+            border-radius: 50%;
+        }
+
+        .timeline-item h3 {
+            color: #245a91;
+            margin-top: 0;
+        }
+
+        .timeline-item p:last-child {
+            margin-bottom: 0;
+        }
+
+        .research-table-wrapper {
+            overflow-x: auto;
+        }
+
+        .research-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .research-table th,
+        .research-table td {
+            padding: 14px;
+            border: 1px solid #dce4ed;
+            text-align: left;
+            vertical-align: top;
+            line-height: 1.6;
+        }
+
+        .research-table th {
+            background: #eaf1fa;
+            color: #213e61;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            background: #eaf1fa;
+            color: #245a91;
+            padding: 9px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #245a91;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .summary-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .summary-item {
+                padding: 14px;
+            }
+
+            .summary-item strong {
+                font-size: 1.2rem;
+            }
+
+            .timeline {
+                padding-left: 18px;
+            }
+
+            .timeline-item::before {
+                left: -27px;
+            }
+
+            .research-table th,
+            .research-table td {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
+    <!-- HEADER -->
 
-    <h1>RuralTech Bridge</h1>
+    <header>
 
-    <p>
-        Educational Technology | Digital Inclusion | Human-Centered Design
-    </p>
+        <h1>RuralTech Bridge</h1>
 
-    <nav>
-        <a href="index.html">← Back to Portfolio</a>
+        <h2>Computer Science Without Computers</h2>
+
+        <p>
+            Educational Technology |
+            Digital Inclusion |
+            Human-Centered Design
+        </p>
+
+        <p>
+            Exploring accessible ways to teach
+            foundational computing concepts
+            in resource-constrained schools in Ghana.
+        </p>
+
+        <a href="index.html">
+            ← Back to Portfolio
+        </a>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="project-nav" aria-label="Project sections">
+
+        <a href="#overview">Overview</a>
+        <a href="#problem">Problem</a>
+        <a href="#users">Users</a>
+        <a href="#solution">Solution</a>
+        <a href="#research">Research</a>
+        <a href="#process">Process</a>
+        <a href="#role">My Role</a>
+        <a href="#future">Next Steps</a>
+
     </nav>
 
-</header>
+
+    <main>
+
+        <!-- PROJECT OVERVIEW -->
+
+        <section id="overview">
+
+            <h2>Project Overview</h2>
+
+            <div class="card">
+
+                <p class="project-meta">
+                    Founder and Project Lead |
+                    Ghana |
+                    Educational Technology |
+                    Ongoing Initiative
+                </p>
+
+                <span class="project-status">
+                    Early Product Development
+                </span>
+
+                <p>
+                    <strong>RuralTech Bridge</strong>
+                    is an educational technology
+                    initiative I founded to explore
+                    practical approaches to improving
+                    technology education and digital
+                    inclusion in rural and underserved
+                    communities in Ghana.
+                </p>
+
+                <p>
+                    The initiative focuses on an
+                    important challenge: students
+                    are expected to develop computing
+                    and digital skills, yet some
+                    schools have limited access to
+                    computers, reliable electricity,
+                    internet connectivity, and other
+                    technology infrastructure.
+                </p>
+
+                <p>
+                    Rather than waiting for every
+                    school to have a fully equipped
+                    computer laboratory, RuralTech
+                    Bridge explores learning
+                    experiences that introduce
+                    foundational computing concepts
+                    using affordable, accessible,
+                    and locally appropriate
+                    educational materials.
+                </p>
+
+                <div class="summary-grid">
+
+                    <div class="summary-item">
+                        <strong>Ghana</strong>
+                        <span>Project Context</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <strong>13</strong>
+                        <span>Needs Survey Respondents</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <strong>Offline</strong>
+                        <span>Learning Approach</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <strong>Upper Primary</strong>
+                        <span>Target Student Group</span>
+                    </div>
+
+                </div>
+
+                <div class="highlight">
+
+                    <strong>Project Goal</strong>
+
+                    <p>
+                        Create an affordable,
+                        hands-on learning kit
+                        that supports computing
+                        education in schools
+                        with limited access
+                        to digital devices.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
 
 
-<main>
+        <!-- PROBLEM -->
 
-<section>
+        <section id="problem">
 
-    <!-- ==========================================
-         Project Overview
-    =========================================== -->
+            <h2>The Problem</h2>
 
-    <h2>Project Overview</h2>
+            <div class="card">
 
-    <div class="card">
+                <p>
+                    Computer and digital skills
+                    are increasingly important
+                    for education, employment,
+                    communication, and participation
+                    in a technology-driven society.
+                </p>
+
+                <p>
+                    However, teaching computing
+                    can be challenging in schools
+                    where students have limited
+                    opportunities to interact
+                    directly with computers and
+                    where electricity or internet
+                    connectivity may be unreliable
+                    or unavailable.
+                </p>
+
+                <p>
+                    This creates an educational
+                    access gap: students may be
+                    expected to learn about
+                    computers and digital
+                    technologies without having
+                    consistent access to the
+                    technologies they are studying.
+                </p>
+
+                <div class="feature-grid">
+
+                    <div class="feature-box">
+
+                        <h3>Limited Computer Access</h3>
+
+                        <p>
+                            Students may have
+                            few opportunities
+                            to practice with
+                            physical computers
+                            during lessons.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-box">
+
+                        <h3>Infrastructure Challenges</h3>
+
+                        <p>
+                            Unreliable electricity
+                            and internet connectivity
+                            can make technology-based
+                            teaching difficult.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-box">
+
+                        <h3>Teaching Materials</h3>
+
+                        <p>
+                            Schools may lack
+                            affordable materials
+                            for demonstrating
+                            computing concepts
+                            through practical
+                            activities.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-box">
+
+                        <h3>Learning Opportunities</h3>
+
+                        <p>
+                            Limited resources
+                            can reduce students'
+                            opportunities for
+                            interactive and
+                            collaborative learning.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TARGET USERS -->
+
+        <section id="users">
+
+            <h2>Target Users</h2>
+
+            <div class="card">
+
+                <p>
+                    The initiative considers
+                    the needs of students,
+                    teachers, schools, and
+                    organizations working
+                    to improve access to
+                    computing education.
+                </p>
+
+                <div class="feature-grid">
+
+                    <div class="feature-box">
+
+                        <h3>Upper-Primary Students</h3>
+
+                        <p>
+                            Students in rural
+                            and underserved
+                            schools learning
+                            foundational
+                            computing concepts.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-box">
+
+                        <h3>Teachers</h3>
+
+                        <p>
+                            Educators delivering
+                            computing-related
+                            lessons with limited
+                            technology resources.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-box">
+
+                        <h3>Schools</h3>
+
+                        <p>
+                            Schools with limited
+                            access to computers,
+                            electricity, or
+                            reliable internet
+                            connectivity.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-box">
+
+                        <h3>Educational Organizations</h3>
+
+                        <p>
+                            Organizations
+                            interested in
+                            low-resource
+                            and inclusive
+                            technology education.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUCT CONCEPT -->
+
+        <section id="solution">
+
+            <h2>Current Product Concept</h2>
+
+            <div class="card">
+
+                <h3>
+                    Computer Science Without Computers
+                </h3>
+
+                <p>
+                    The current RuralTech Bridge
+                    product concept is
+                    <strong>
+                        Computer Science Without Computers
+                    </strong>,
+                    an offline learning kit
+                    designed to help students
+                    learn foundational computing
+                    concepts through hands-on
+                    activities without requiring
+                    continuous access to a computer.
+                </p>
+
+                <p>
+                    The approach translates
+                    computing concepts into
+                    physical, collaborative,
+                    and classroom-friendly
+                    activities that can be used
+                    in low-resource learning
+                    environments.
+                </p>
+
+                <div class="highlight">
+
+                    <strong>Design Principle</strong>
+
+                    <p>
+                        The goal is not to replace
+                        access to computers.
+                        Instead, the learning kit
+                        is intended to provide
+                        a practical bridge that
+                        allows students to begin
+                        developing computing
+                        knowledge while schools
+                        continue working toward
+                        greater access to
+                        digital infrastructure.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LEARNING MATERIALS -->
+
+        <section>
+
+            <h2>Learning Kit Materials</h2>
+
+            <div class="card">
+
+                <p>
+                    The developing learning-kit
+                    concept includes physical
+                    and teacher-supported
+                    materials such as:
+                </p>
+
+                <div class="feature-grid">
+
+                    <div class="feature-box">
+
+                        <h3>Picture Cards</h3>
+
+                        <p>
+                            Cards representing
+                            computer components
+                            and digital technologies.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-box">
+
+                        <h3>Name Cards</h3>
+
+                        <p>
+                            Cards that help
+                            students identify
+                            computing devices
+                            and components.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-box">
+
+                        <h3>Function Cards</h3>
+
+                        <p>
+                            Materials explaining
+                            what different
+                            computer components do.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-box">
+
+                        <h3>Matching Activities</h3>
+
+                        <p>
+                            Activities connecting
+                            computer components
+                            with their names
+                            and functions.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-box">
+
+                        <h3>Challenge Cards</h3>
+
+                        <p>
+                            Activities encouraging
+                            students to apply
+                            their understanding
+                            through classroom tasks.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-box">
+
+                        <h3>Learning Mats</h3>
+
+                        <p>
+                            Materials for organizing
+                            collaborative and
+                            hands-on activities.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-box">
+
+                        <h3>Teacher-Support Materials</h3>
+
+                        <p>
+                            Guidance explaining
+                            how teachers can
+                            facilitate activities
+                            using the learning kit.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <p>
+                    These materials describe
+                    the current product concept
+                    and development work.
+                    The complete kit has
+                    not yet undergone
+                    school-based evaluation.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- HOW IT WORKS -->
+
+        <section>
+
+            <h2>How the Product Is Intended to Work</h2>
+
+            <div class="card">
+
+                <p>
+                    Students interact with
+                    physical learning materials
+                    to identify, classify,
+                    match, organize, and explain
+                    computing concepts.
+                </p>
+
+                <p>
+                    Activities are designed
+                    to encourage participation
+                    and discussion rather than
+                    relying only on textbook
+                    descriptions.
+                </p>
+
+                <div class="highlight">
+
+                    <strong>Example Learning Activity</strong>
+
+                    <p>
+                        Students could match
+                        an image of a computer
+                        component with its
+                        name and function,
+                        organize components
+                        according to their roles,
+                        and complete challenges
+                        requiring them to explain
+                        how different parts
+                        of a computer system
+                        work together.
+                    </p>
+
+                </div>
+
+                <p>
+                    This approach is intended
+                    to make abstract computing
+                    concepts more tangible
+                    while supporting
+                    collaborative learning
+                    in classrooms where
+                    access to digital
+                    devices may be limited.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- NEEDS ASSESSMENT -->
+
+        <section id="research">
+
+            <h2>Needs Assessment</h2>
+
+            <div class="card">
+
+                <p>
+                    Early development of
+                    the project included
+                    an initial needs survey
+                    with
+                    <strong>13 respondents</strong>
+                    to better understand
+                    technology access,
+                    teaching challenges,
+                    and opportunities for
+                    supporting computing
+                    education in
+                    resource-constrained schools.
+                </p>
+
+                <p>
+                    The needs-assessment
+                    process helped refine
+                    the problem definition,
+                    target users,
+                    value proposition,
+                    and direction of the
+                    initial learning-kit concept.
+                </p>
+
+                <div class="highlight">
+
+                    <strong>Research Contribution</strong>
+
+                    <p>
+                        The needs survey
+                        provided early
+                        contextual information
+                        for product development.
+                        It was not a
+                        usability evaluation
+                        of the finished kit.
+                    </p>
+
+                </div>
+
+                <p>
+                    The survey was an
+                    exploratory activity
+                    involving a small
+                    number of respondents.
+                    Its purpose was to
+                    inform early decisions
+                    rather than establish
+                    findings representative
+                    of all rural schools
+                    in Ghana.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- HUMAN-CENTERED DESIGN -->
+
+        <section>
+
+            <h2>Human-Centered Design Approach</h2>
+
+            <div class="card">
+
+                <p>
+                    RuralTech Bridge
+                    applies a human-centered
+                    approach by beginning
+                    with the needs,
+                    constraints, and
+                    learning environments
+                    of the people who
+                    will use the product.
+                </p>
+
+                <div class="research-table-wrapper">
+
+                    <table class="research-table">
+
+                        <thead>
+                            <tr>
+                                <th>Design Consideration</th>
+                                <th>Product Direction</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    Infrastructure
+                                </td>
+
+                                <td>
+                                    Activities that
+                                    can be used without
+                                    continuous electricity,
+                                    internet access,
+                                    or computers.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Affordability
+                                </td>
+
+                                <td>
+                                    Explore low-cost
+                                    materials suitable
+                                    for resource-constrained
+                                    classrooms.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Teacher Facilitation
+                                </td>
+
+                                <td>
+                                    Include guidance
+                                    for organizing
+                                    and delivering
+                                    learning activities.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Student Participation
+                                </td>
+
+                                <td>
+                                    Encourage hands-on
+                                    activities,
+                                    discussion,
+                                    and collaboration.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Classroom Usability
+                                </td>
+
+                                <td>
+                                    Consider how
+                                    teachers and
+                                    students will
+                                    interact with
+                                    the materials
+                                    during lessons.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Local Context
+                                </td>
+
+                                <td>
+                                    Consider the
+                                    realities of
+                                    rural and
+                                    underserved
+                                    learning environments.
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p>
+                    The project is being
+                    developed iteratively
+                    so that feedback from
+                    educators, students,
+                    mentors, and other
+                    stakeholders can inform
+                    future versions.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- DEVELOPMENT PROCESS -->
+
+        <section id="process">
+
+            <h2>Product Development Process</h2>
+
+            <div class="card">
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+
+                        <h3>
+                            1. Problem Identification
+                        </h3>
+
+                        <p>
+                            Identified the challenge
+                            of teaching computing
+                            concepts in schools
+                            with limited access
+                            to computers,
+                            electricity,
+                            and internet connectivity.
+                        </p>
+
+                    </div>
+
+                    <div class="timeline-item">
+
+                        <h3>
+                            2. Needs Assessment
+                        </h3>
+
+                        <p>
+                            Gathered initial feedback
+                            through a survey with
+                            13 respondents to better
+                            understand technology
+                            access, classroom challenges,
+                            and potential user needs.
+                        </p>
+
+                    </div>
+
+                    <div class="timeline-item">
+
+                        <h3>
+                            3. Product Concept
+                        </h3>
+
+                        <p>
+                            Developed the
+                            Computer Science
+                            Without Computers
+                            concept as an offline,
+                            hands-on approach
+                            to foundational
+                            computing education.
+                        </p>
+
+                    </div>
+
+                    <div class="timeline-item">
+
+                        <h3>
+                            4. Prototype Development
+                        </h3>
+
+                        <p>
+                            Began developing
+                            learning cards,
+                            activity materials,
+                            classroom challenges,
+                            learning mats,
+                            and teacher-support
+                            resources.
+                        </p>
+
+                    </div>
+
+                    <div class="timeline-item">
+
+                        <h3>
+                            5. Future Testing
+                        </h3>
+
+                        <p>
+                            Future work will
+                            include prototype
+                            evaluation with
+                            educators and students,
+                            refinement of
+                            learning activities,
+                            and school-based
+                            pilot testing.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MY ROLE -->
+
+        <section id="role">
+
+            <h2>My Role and Contributions</h2>
+
+            <div class="card">
+
+                <p>
+                    <strong>
+                        Founder and Project Lead
+                    </strong>
+                </p>
+
+                <p>
+                    My contributions to
+                    RuralTech Bridge and
+                    the development of
+                    Computer Science Without
+                    Computers include:
+                </p>
+
+                <ul>
+
+                    <li>
+                        Identified and defined
+                        the educational problem
+                        addressed by the initiative.
+                    </li>
+
+                    <li>
+                        Developed the initial
+                        concept for the
+                        Computer Science
+                        Without Computers
+                        learning kit.
+                    </li>
+
+                    <li>
+                        Conducted an initial
+                        needs survey to inform
+                        product development.
+                    </li>
+
+                    <li>
+                        Developed and refined
+                        the project's target
+                        users and value proposition.
+                    </li>
+
+                    <li>
+                        Designed concepts for
+                        hands-on computing
+                        learning activities
+                        and educational materials.
+                    </li>
+
+                    <li>
+                        Developed the initiative's
+                        business model and
+                        venture-development strategy.
+                    </li>
+
+                    <li>
+                        Incorporated feedback
+                        from educators,
+                        mentors, and
+                        entrepreneurship-development
+                        activities into the
+                        evolving product concept.
+                    </li>
+
+                    <li>
+                        Lead the ongoing
+                        development and
+                        future pilot planning
+                        for the initiative.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- CURRENT STAGE -->
+
+        <section>
+
+            <h2>Current Development Stage</h2>
+
+            <div class="card">
+
+                <span class="project-status">
+                    Prototype Development and Refinement
+                </span>
+
+                <p>
+                    RuralTech Bridge is currently
+                    in the early product-development
+                    and prototype-refinement stage.
+                </p>
+
+                <p>
+                    The immediate focus is
+                    on communicating the
+                    product concept clearly,
+                    strengthening the structure
+                    of the learning kit,
+                    developing additional
+                    prototype materials,
+                    and preparing for
+                    future testing with
+                    intended users.
+                </p>
+
+                <p>
+                    The current work represents
+                    an evolving educational
+                    technology prototype,
+                    not a fully deployed
+                    school program.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FUTURE DEVELOPMENT -->
+
+        <section id="future">
+
+            <h2>Future Development</h2>
+
+            <div class="card">
+
+                <p>
+                    The next phase of
+                    the project is intended
+                    to focus on refining
+                    the product and
+                    evaluating its
+                    suitability for
+                    classroom use.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Expand the range of
+                        Computer Science
+                        Without Computers
+                        learning activities.
+                    </li>
+
+                    <li>
+                        Develop additional
+                        physical prototypes
+                        and teacher-support
+                        resources.
+                    </li>
+
+                    <li>
+                        Evaluate the usability
+                        and clarity of
+                        the materials
+                        with educators.
+                    </li>
+
+                    <li>
+                        Test learning
+                        activities with
+                        students in
+                        appropriate
+                        educational settings.
+                    </li>
+
+                    <li>
+                        Refine the product
+                        based on educator
+                        and student feedback.
+                    </li>
+
+                    <li>
+                        Explore partnerships
+                        with schools,
+                        educational organizations,
+                        and community stakeholders.
+                    </li>
+
+                    <li>
+                        Conduct pilot
+                        implementations
+                        to evaluate feasibility,
+                        usability, and
+                        educational value.
+                    </li>
+
+                </ul>
+
+                <div class="highlight">
+
+                    <strong>Research Status</strong>
+
+                    <p>
+                        Usability evaluation,
+                        student testing,
+                        and school-based
+                        pilot implementation
+                        are planned activities.
+                        Results from these
+                        activities are
+                        not yet available.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SKILLS -->
+
+        <section>
+
+            <h2>Skills Demonstrated</h2>
+
+            <div class="card">
+
+                <div class="skills-container">
+
+                    <span class="skill-tag">
+                        Educational Technology
+                    </span>
+
+                    <span class="skill-tag">
+                        Human-Centered Design
+                    </span>
+
+                    <span class="skill-tag">
+                        Digital Inclusion
+                    </span>
+
+                    <span class="skill-tag">
+                        Needs Assessment
+                    </span>
+
+                    <span class="skill-tag">
+                        Product Development
+                    </span>
+
+                    <span class="skill-tag">
+                        Prototyping
+                    </span>
+
+                    <span class="skill-tag">
+                        Technology Education
+                    </span>
+
+                    <span class="skill-tag">
+                        User Research
+                    </span>
+
+                    <span class="skill-tag">
+                        Entrepreneurship
+                    </span>
+
+                    <span class="skill-tag">
+                        Community Engagement
+                    </span>
+
+                    <span class="skill-tag">
+                        Problem Definition
+                    </span>
+
+                    <span class="skill-tag">
+                        Learning Experience Design
+                    </span>
+
+                    <span class="skill-tag">
+                        Venture Development
+                    </span>
+
+                    <span class="skill-tag">
+                        Project Leadership
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJECT IMPACT -->
+
+        <section>
+
+            <h2>Project Impact and Long-Term Goal</h2>
+
+            <div class="card">
+
+                <p>
+                    RuralTech Bridge explores
+                    how educational technology
+                    can be designed around
+                    the realities of
+                    communities where
+                    access to digital
+                    infrastructure remains
+                    limited.
+                </p>
+
+                <p>
+                    Computer Science Without
+                    Computers aims to
+                    reduce the barrier
+                    between students
+                    and foundational
+                    computing education
+                    by creating learning
+                    experiences that can
+                    begin with the resources
+                    already available
+                    in the classroom.
+                </p>
+
+                <p>
+                    The longer-term goal
+                    is to contribute to
+                    more inclusive pathways
+                    into computing and
+                    digital learning
+                    for students in
+                    rural and underserved
+                    communities.
+                </p>
+
+                <p>
+                    The educational impact
+                    of the learning kit
+                    will need to be
+                    evaluated through
+                    future classroom
+                    implementation
+                    and research.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- RETURN TO PORTFOLIO -->
+
+        <section>
+
+            <div class="card">
+
+                <a class="back-link"
+                   href="index.html">
+                    ← Return to Portfolio Home
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
 
         <p>
-            <strong>RuralTech Bridge</strong> is an educational technology
-            initiative I founded to explore practical approaches to improving
-            technology education and digital inclusion in rural and underserved
-            communities in Ghana.
+            &copy; 2026
+            Suweibatu Munahima Sarene Azuma
         </p>
 
-        <p>
-            The initiative focuses on an important challenge: students are
-            expected to develop computing and digital skills, yet some schools
-            have limited access to computers, reliable electricity, internet
-            connectivity, and other technology infrastructure.
-        </p>
-
-        <p>
-            Rather than waiting for every school to have a fully equipped
-            computer laboratory, RuralTech Bridge explores learning experiences
-            that can introduce foundational computing concepts using affordable,
-            accessible, and locally appropriate educational materials.
-        </p>
-
-    </div>
-
-
-    <!-- ==========================================
-         The Problem
-    =========================================== -->
-
-    <h2>The Problem</h2>
-
-    <div class="card">
-
-        <p>
-            Computer and digital skills are increasingly important for
-            education, employment, communication, and participation in a
-            technology-driven society.
-        </p>
-
-        <p>
-            However, teaching computing can be challenging in schools where
-            students have limited opportunities to interact directly with
-            computers and where electricity or internet connectivity may
-            be unreliable or unavailable.
-        </p>
-
-        <p>
-            This creates an educational access gap: students may be expected
-            to learn about computers and digital technologies without having
-            consistent access to the technologies they are studying.
-        </p>
-
-    </div>
-
-
-    <!-- ==========================================
-         Target Users
-    =========================================== -->
-
-    <h2>Target Users</h2>
-
-    <div class="card">
-
-        <ul>
-
-            <li>
-                Upper-primary students in rural and underserved schools.
-            </li>
-
-            <li>
-                Teachers delivering computing-related lessons with limited
-                technology resources.
-            </li>
-
-            <li>
-                Schools with limited access to computers, electricity, or
-                reliable internet connectivity.
-            </li>
-
-            <li>
-                Educational organizations interested in low-resource and
-                inclusive technology education.
-            </li>
-
-        </ul>
-
-    </div>
-
-
-    <!-- ==========================================
-         Current Product
-    =========================================== -->
-
-    <h2>Current Product</h2>
-
-    <div class="card">
-
-        <h3>Computer Science Without Computers</h3>
-
-        <p>
-            The current RuralTech Bridge product concept is
-            <strong>Computer Science Without Computers</strong>, an offline
-            learning kit designed to help students learn foundational computing
-            concepts through hands-on activities without requiring continuous
-            access to a computer.
-        </p>
-
-        <p>
-            The approach translates computing concepts into physical,
-            collaborative, and classroom-friendly activities that can be used
-            in low-resource learning environments.
-        </p>
-
-        <p>
-            The goal is not to replace access to computers. Instead, the
-            learning kit is intended to provide a practical bridge that allows
-            students to begin developing computing knowledge while schools
-            continue working toward greater access to digital infrastructure.
-        </p>
-
-    </div>
-
-
-    <!-- ==========================================
-         Current Learning Materials
-    =========================================== -->
-
-    <h2>Current Learning Materials</h2>
-
-    <div class="card">
-
-        <p>
-            The developing learning-kit concept includes physical and
-            teacher-supported materials such as:
-        </p>
-
-        <ul>
-
-            <li>
-                Picture cards representing computer components and
-                digital technologies.
-            </li>
-
-            <li>
-                Name cards that help students identify computing devices
-                and components.
-            </li>
-
-            <li>
-                Function cards explaining what different computer components
-                do.
-            </li>
-
-            <li>
-                Matching activities connecting computer components with
-                their names and functions.
-            </li>
-
-            <li>
-                Challenge cards that encourage students to apply their
-                understanding through classroom activities.
-            </li>
-
-            <li>
-                Learning mats for organizing collaborative and
-                hands-on activities.
-            </li>
-
-            <li>
-                Teacher-support materials explaining how to facilitate
-                activities using the learning kit.
-            </li>
-
-        </ul>
-
-    </div>
-
-
-    <!-- ==========================================
-         How the Product Works
-    =========================================== -->
-
-    <h2>How the Product Works</h2>
-
-    <div class="card">
-
-        <p>
-            Students interact with physical learning materials to identify,
-            classify, match, organize, and explain computing concepts.
-            Activities are designed to encourage participation and discussion
-            rather than relying only on textbook descriptions.
-        </p>
-
-        <p>
-            For example, students can match an image of a computer component
-            with its name and function, organize components according to their
-            roles, and complete challenge activities that require them to
-            explain how different parts of a computer system work together.
-        </p>
-
-        <p>
-            This approach makes abstract computing concepts more tangible
-            while supporting collaborative learning in classrooms where
-            access to digital devices may be limited.
-        </p>
-
-    </div>
-
-
-    <!-- ==========================================
-         Needs Assessment
-    =========================================== -->
-
-    <h2>Needs Assessment</h2>
-
-    <div class="card">
-
-        <p>
-            Early development of the project included an initial needs survey
-            with <strong>13 respondents</strong> to better understand technology
-            access, teaching challenges, and opportunities for supporting
-            computing education in resource-constrained schools.
-        </p>
-
-        <p>
-            The needs-assessment process helped refine the problem definition,
-            target users, value proposition, and direction of the initial
-            learning-kit concept.
-        </p>
-
-        <p>
-            The project continues to use feedback and iterative development
-            to ensure that future prototypes respond to the realities of the
-            schools and educators the initiative is intended to support.
-        </p>
-
-    </div>
-
-
-    <!-- ==========================================
-         Human-Centered Design Approach
-    =========================================== -->
-
-    <h2>Human-Centered Design Approach</h2>
-
-    <div class="card">
-
-        <p>
-            RuralTech Bridge applies a human-centered approach by beginning
-            with the needs, constraints, and learning environments of the
-            people who will use the product.
-        </p>
-
-        <p>
-            Product decisions consider factors such as infrastructure
-            limitations, affordability, classroom usability, teacher
-            facilitation, student participation, and the ability to use
-            learning materials without continuous electricity or internet
-            connectivity.
-        </p>
-
-        <p>
-            The project is being developed iteratively so that feedback from
-            educators, students, mentors, and other stakeholders can inform
-            future versions of the product.
-        </p>
-
-    </div>
-
-
-    <!-- ==========================================
-         Product Development Process
-    =========================================== -->
-
-    <h2>Product Development Process</h2>
-
-    <div class="timeline">
-
-        <div class="timeline-item">
-
-            <h3>1. Problem Identification</h3>
-
-            <p>
-                Identified the challenge of teaching computing concepts in
-                schools with limited access to computers, electricity, and
-                internet connectivity.
-            </p>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <h3>2. Needs Assessment</h3>
-
-            <p>
-                Gathered initial feedback to better understand technology
-                access, classroom challenges, and potential user needs.
-            </p>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <h3>3. Product Concept</h3>
-
-            <p>
-                Developed the Computer Science Without Computers concept as
-                an offline and hands-on approach to foundational computing
-                education.
-            </p>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <h3>4. Prototype Development</h3>
-
-            <p>
-                Began developing learning cards, activity materials,
-                classroom challenges, learning mats, and teacher-support
-                resources.
-            </p>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <h3>5. Future Testing</h3>
-
-            <p>
-                Future development will include prototype evaluation with
-                educators and students, refinement of learning activities,
-                and school-based pilot testing.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <!-- ==========================================
-         My Role
-    =========================================== -->
-
-    <h2>My Role</h2>
-
-    <div class="card">
-
-        <p>
-            <strong>Founder and Project Lead</strong>
-        </p>
-
-        <ul>
-
-            <li>
-                Identified and defined the educational problem addressed
-                by the initiative.
-            </li>
-
-            <li>
-                Developed the initial concept for the Computer Science
-                Without Computers learning kit.
-            </li>
-
-            <li>
-                Conducted an initial needs survey to inform product
-                development.
-            </li>
-
-            <li>
-                Developed and refined the project's target users and
-                value proposition.
-            </li>
-
-            <li>
-                Designed concepts for hands-on computing learning
-                activities and educational materials.
-            </li>
-
-            <li>
-                Developed the initiative's business model and
-                venture-development strategy.
-            </li>
-
-            <li>
-                Incorporated feedback from educators, mentors, and
-                entrepreneurship-development activities into the
-                evolving product concept.
-            </li>
-
-            <li>
-                Lead the ongoing development and future pilot planning
-                for the initiative.
-            </li>
-
-        </ul>
-
-    </div>
-
-
-    <!-- ==========================================
-         Current Stage
-    =========================================== -->
-
-    <h2>Current Stage</h2>
-
-    <div class="card">
-
-        <p>
-            RuralTech Bridge is currently in the
-            <strong>early product-development and prototype-refinement stage</strong>.
-        </p>
-
-        <p>
-            The immediate focus is on communicating the current product
-            clearly, strengthening the structure of the learning kit,
-            developing additional prototype materials, and preparing for
-            future testing with intended users.
-        </p>
-
-        <p>
-            This distinction is important: the current work represents an
-            evolving educational technology prototype rather than a fully
-            deployed school program.
-        </p>
-
-    </div>
-
-
-    <!-- ==========================================
-         Future Development
-    =========================================== -->
-
-    <h2>Future Development</h2>
-
-    <div class="card">
-
-        <ul>
-
-            <li>
-                Expand the range of Computer Science Without Computers
-                learning activities.
-            </li>
-
-            <li>
-                Develop additional physical prototypes and
-                teacher-support resources.
-            </li>
-
-            <li>
-                Evaluate the usability and clarity of the materials
-                with educators.
-            </li>
-
-            <li>
-                Test learning activities with students in appropriate
-                educational settings.
-            </li>
-
-            <li>
-                Refine the product based on educator and student feedback.
-            </li>
-
-            <li>
-                Explore partnerships with schools, educational organizations,
-                and community stakeholders.
-            </li>
-
-            <li>
-                Conduct pilot implementations to evaluate feasibility,
-                usability, and educational value.
-            </li>
-
-        </ul>
-
-    </div>
-
-
-    <!-- ==========================================
-         Skills Demonstrated
-    =========================================== -->
-
-    <h2>Skills Demonstrated</h2>
-
-    <div class="card">
-
-        <p>
-            Educational Technology • Human-Centered Design •
-            Digital Inclusion • Needs Assessment • Product Development •
-            Prototyping • Technology Education • User Research •
-            Entrepreneurship • Community Engagement •
-            Problem Definition • Learning Experience Design •
-            Venture Development • Project Leadership
-        </p>
-
-    </div>
-
-
-    <!-- ==========================================
-         Project Impact
-    =========================================== -->
-
-    <h2>Project Impact</h2>
-
-    <div class="card">
-
-        <p>
-            RuralTech Bridge explores how educational technology can be
-            designed around the realities of communities where access to
-            digital infrastructure remains limited.
-        </p>
-
-        <p>
-            Computer Science Without Computers aims to reduce the barrier
-            between students and foundational computing education by creating
-            learning experiences that can begin with the resources already
-            available in the classroom.
-        </p>
-
-        <p>
-            The longer-term goal is to contribute to more inclusive pathways
-            into computing and digital learning for students in rural and
-            underserved communities.
-        </p>
-
-    </div>
-
-</section>
-
-</main>
-
-
-<footer>
-
-    <p>
-        © 2026 Suweibatu Munahima Sarene Azuma
-    </p>
-
-</footer>
+    </footer>
 
 </body>
-
 </html>
